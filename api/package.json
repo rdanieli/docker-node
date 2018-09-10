@@ -1,0 +1,27 @@
+{
+  "name": "app_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "babel-node": "babel-node --presets=latest",
+    "start": "babel-watch -L ./src/index.js",
+    "debug": "npm run build && nodemon -L --inspect=0.0.0.0 --exec babel-node -- src/index.js",
+    "mocha": "mocha --compilers js:babel-register",
+    "test": "mocha --compilers js:babel-register --recursive ./test/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^2.0.7",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
